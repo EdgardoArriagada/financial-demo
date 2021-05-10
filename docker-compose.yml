@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  financial-demo:
+    image: financial-demo
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/app
+
