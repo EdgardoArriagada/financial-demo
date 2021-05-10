@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile
     stdin_open: true
     tty: true
+    user: "${UID}:${GID}"
     volumes:
       - ./:/app
 

@@ -28,7 +28,15 @@ This is an example chatbot demonstrating how to build AI assistants for financia
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## Install dependencies
+## Docker
+Just perform a `docker-compose up` at the root of this project and check that it returns a zero
+
+make this alias for convenience
+```
+alias rrasa="UID=${UID} GID=${GID} docker-compose run financial-demo"
+```
+
+## Install dependencies (Skip if using Docker)
 
 Run:
 ```bash
