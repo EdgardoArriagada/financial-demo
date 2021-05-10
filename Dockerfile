@@ -1,9 +1,4 @@
-FROM python:3.8-slim
-
-# Setup virtual environment
-ENV VIRTUAL_ENV=/opt/venv
-RUN python3 -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+FROM rasa/rasa:2.6.0-full
 
 # Install dependencies:
 COPY requirements* ./
