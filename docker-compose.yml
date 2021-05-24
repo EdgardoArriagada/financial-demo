@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   server:
-    command: "run actions"
+    command: "run actions --port 5056"
     image: rasa/rasa:2.6.0-full
     stdin_open: true
     ports:
-      - 5055:5055
+      - 5056:5056
     tty: true
     user: "${USER_ID}:${GROUP_ID}"
     volumes:

@@ -59,7 +59,7 @@ docker-run:
 	docker run -d -p $(ACTION_SERVER_PORT):5055 --name $(ACTION_SERVER_DOCKERNAME) $(ACTION_SERVER_DOCKERPATH)
 	
 docker-test:
-	curl http://localhost:$(ACTION_SERVER_PORT)/$(ACTION_SERVER_ENDPOINT_HEALTH)
+	curl http://server:$(ACTION_SERVER_PORT)/$(ACTION_SERVER_ENDPOINT_HEALTH)
 
 docker-clean-containers:
 	docker stop $(ACTION_SERVER_DOCKERNAME)

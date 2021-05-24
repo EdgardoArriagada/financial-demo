@@ -14,16 +14,16 @@ pipeline:
   - name: FallbackClassifier
     threshold: 0.7
   - name: DucklingEntityExtractor
-    url: http://localhost:8000
+    url: http://duckling.rasa.com:8000
     dimensions:
-    - amount-of-money
-    - time
-    - number
+      - amount-of-money
+      - time
+      - number
   - name: SpacyNLP
     model: "en_core_web_md"
     case_sensitive: false
   - name: "SpacyEntityExtractor"
-    # Note: It is not possible to use the SpacyTokenizer + SpacyFeaturizer in 
+    # Note: It is not possible to use the SpacyTokenizer + SpacyFeaturizer in
     #       combination with the WhitespaceTokenizer, and as a result the
     #       PERSON extraction by Spacy is not very robust.
     #       Because of this, the nlu training data is annotated as well, and the
@@ -31,10 +31,10 @@ pipeline:
     dimensions: ["PERSON"]
   - name: EntitySynonymMapper
 policies:
-- name: AugmentedMemoizationPolicy
-- name: TEDPolicy
-  epochs: 40
-- name: RulePolicy
-  core_fallback_threshold: 0.4
-  core_fallback_action_name: "action_default_fallback"
-  enable_fallback_prediction: True
+  - name: AugmentedMemoizationPolicy
+  - name: TEDPolicy
+    epochs: 40
+  - name: RulePolicy
+    core_fallback_threshold: 0.4
+    core_fallback_action_name: "action_default_fallback"
+    enable_fallback_prediction: True
