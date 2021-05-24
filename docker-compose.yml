@@ -1,14 +1,25 @@
 version: '3.8'
 
 services:
-  financial-demo:
-    image: financial-demo
-    build:
-      context: ./
-      dockerfile: Dockerfile
+  server:
+    command: "run actions"
+    image: rasa/rasa:2.6.0-full
     stdin_open: true
+    ports:
+      - 5055:5055
     tty: true
-    user: "${UID}:${GID}"
+    user: "${USER_ID}:${GROUP_ID}"
+    volumes:
+      - ./:/app
+
+  financial-demo:
+    command: "shell"
+    image: rasa/rasa:2.6.0-full
+    stdin_open: true
+    ports:
+      - 8080:5055
+    tty: true
+    user: "${USER_ID}:${GROUP_ID}"
     volumes:
       - ./:/app
 
