@@ -4,7 +4,7 @@ nlu:
   examples: |
     - How much money is in my account?
     - How much money is on my [bank](account_type) account?
-    - what's my [balance](acount-of-money
+    - what's my [balance](amount-of-money)
     - what's my [current balance](amount-of-money)?
     - what's left on that account?
 - intent: check_human
