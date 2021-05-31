@@ -1,12 +1,19 @@
 version: "2.0"
 nlu:
+- intent: check_balance
+  examples: |
+    - How much money is in my account?
+    - How much money is on my [bank](account_type) account?
+    - what's my [balance](acount-of-money
+    - what's my [current balance](amount-of-money)?
+    - what's left on that account?
 - intent: check_human
   examples: |
     - are you a bot?
     - am i speaking to an ai?
     - are you a human or a bot?
-    - are you real? 
-    - are you virtual? 
+    - are you real?
+    - are you virtual?
     - are you an ai?
     - aren't you a bot
     - are you a chatbot
